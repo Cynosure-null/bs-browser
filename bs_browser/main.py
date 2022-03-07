@@ -1,11 +1,13 @@
 #! bin/python
 
 import fsmgr
-import LOG
+import log_
 
 c_fs = fsmgr.FileUtils()
 c_log = LOG.Logger()
-if c_fs.isFirstRun():
+
+try:
+    c_fs.isFirstRun()
+except:
     c_fs.firstRun()
-else:
     c_log.new("WARN", "Bepis")
